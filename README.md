@@ -1,6 +1,6 @@
 # cdw
 Keep track of `cd` directory navigation
-Whenever you `cd` it keeps track of them for you. Simple to use just cdw (W is for Win).
+Whenever you `cd` it keeps track of them for you. Simple to use just `cdw` (W is for Win).
 
 ## Usage
 ### `cdw` shows top 25 most visited paths
