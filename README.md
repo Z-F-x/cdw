@@ -10,4 +10,4 @@ Whenever you `cd` it keeps track of them for you. Simple to use just `cdw` (W is
 This script runs fzf for the dropdown
 
 ## Installation 
-Copy paste content into your bash file
+Copy content in `.zshcr` or `.bashrc` file.
