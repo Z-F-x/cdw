@@ -1,4 +1,3 @@
-  
 remove_duplicates_and_update_visits() {
     local cd_history_file=~/.cd_history
     local cd_visits_file=~/.cd_visits
@@ -46,7 +45,7 @@ cd() {
 
     # If the current directory is the home directory, log as ~
     if [[ "$current_dir" == "$home_dir" ]]; then
-        current_dir=""  # Log as ~ if we're in the home directory
+#        current_dir=""  # Log as ~ if we're in the home directory
     # If the current directory is inside the home directory, log it as an absolute path
     elif [[ "$current_dir" == "$home_dir"* ]]; then
         current_dir="$current_dir"  # Keep it as absolute path
@@ -58,20 +57,10 @@ cd() {
  #       current_dir="~"  # Log as ~ if it’s ./ (current directory)
     fi
     
-        # Split the path into components
-    local base_dir
-    local last_dir
-    base_dir=$(dirname "$current_dir")
-    last_dir=$(basename "$current_dir")
 
-    # Ensure that last directory with spaces is properly quoted
-    if [[ "$last_dir" =~ \  ]]; then
-        last_dir="\"$last_dir\""
-    fi
-
-    # Reconstruct the full path with quotes around the last directory if necessary
-    if [[ "$current_dir" != "$base_dir/$last_dir" ]]; then
-        current_dir="$base_dir/$last_dir"
+        # If the path contains spaces, wrap the entire path in quotes
+    if [[ "$current_dir" =~ \  ]]; then
+        current_dir="\"$current_dir\""
     fi
 
     # Log the current absolute directory to .cd_history
@@ -82,6 +71,7 @@ cd() {
     # Remove duplicates and update .cd_visits
     remove_duplicates_and_update_visits
 }
+
 
 cdw() {
     local cd_history_file=~/.cd_history
@@ -105,3 +95,4 @@ cdw() {
 
         remove_duplicates_and_update_visits
 }
+
