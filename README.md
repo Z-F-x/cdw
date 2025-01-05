@@ -1,5 +1,6 @@
 # cdw
-Keep track of directory navigation
+Keep track of `cd` directory navigation
+Whenever you `cd` it keeps track of them for you. Simple to use just cdw (W is for Win).
 
 Shows top 25 most visited paths
 ![image](https://github.com/user-attachments/assets/4e56a229-f7c6-4179-aa90-27105aaf2cb9)
